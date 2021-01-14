@@ -11,6 +11,8 @@ namespace Tes.Data.Context
     {
         public TesDbContext(DbContextOptions options) :base(options)
         {
+            ChangeTracker.QueryTrackingBehavior = QueryTrackingBehavior.NoTracking;
+            ChangeTracker.AutoDetectChangesEnabled = false;
         }
         public DbSet<Produto2> Produtos2 { get; set; }
         public DbSet<Cliente> Clientes { get; set; }

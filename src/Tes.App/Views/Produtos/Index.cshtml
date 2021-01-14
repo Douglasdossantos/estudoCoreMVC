@@ -1,0 +1,13 @@
+﻿@model IEnumerable<Tes.App.ViewModels.ProdutoViewModel>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>@ViewData["Title"]</h1>
+<hr />
+
+<p>
+    <a class="btn btn-dark" asp-action="Create">Add Produto</a>
+</p>
+<partial name="_ListaProdutos" />

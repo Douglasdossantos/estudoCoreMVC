@@ -76,3 +76,10 @@ file,
 textarea {
     max-width: 400px;
 }
+
+input,
+select,
+file,
+textarea {
+    max-width: 400px;
+}

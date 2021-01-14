@@ -5,6 +5,7 @@ using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
+using Tes.App.Extensions;
 
 namespace Tes.App.ViewModels
 {
@@ -31,7 +32,7 @@ namespace Tes.App.ViewModels
 
         public string Imagem { get; set; }
 
-
+        [Moeda]
         [Required(ErrorMessage = "O Campo {0} é Obrigratório!")]
         public decimal Valor { get; set; }
 
@@ -40,7 +41,7 @@ namespace Tes.App.ViewModels
         [DisplayName("Ativo?")]
         public bool Ativo { get; set; }
 
-        /* EF Relations */
+        ///* EF Relations */
         public FornecedorViewModel Fornecedor { get; set; }
         public IEnumerable<FornecedorViewModel> Fornecedores { get; set; }
     }

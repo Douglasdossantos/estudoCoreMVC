@@ -1,13 +1,14 @@
-﻿@model Tes.App.ViewModels.FornecedorViewModel
+﻿@using Tes.App.Extensions
+@model Tes.App.ViewModels.FornecedorViewModel
 
 @{
     ViewData["Title"] = "Details";
 }
 
-<h1>Details</h1>
+<h4>@ViewData["Title"]</h4>
 
 <div>
-    <h4>FornecedorViewModel</h4>
+    <h4>Informaçoes somente para leitura</h4>
     <hr />
     <dl class="row">
         <dt class = "col-sm-2">
@@ -20,13 +21,7 @@
             @Html.DisplayNameFor(model => model.Documento)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Documento)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.TipoFornecedor)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.TipoFornecedor)
+            @this.FormataDocumento(Model.TipoFornecedor,Model.Documento)
         </dd>
         <dt class = "col-sm-2">
             @Html.DisplayNameFor(model => model.Ativo)
@@ -36,7 +31,8 @@
         </dd>
     </dl>
 </div>
+<param name="_detalheEndereco" />
 <div>
-    <a asp-action="Edit" asp-route-id="@Model.Id">Edit</a> |
-    <a asp-action="Index">Back to List</a>
+    <a class="btn btn-danger" asp-action="Edit" asp-route-id="@Model.Id">Editar</a> |
+    <a class="btn btn-dark" asp-action="Index">Voltar</a>
 </div>
